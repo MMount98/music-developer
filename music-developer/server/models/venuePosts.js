@@ -3,8 +3,10 @@ const { Schema, model } = require("mongoose");
 const venuePostsSchema = new Schema(
   {
     venue: { type: Schema.Types.ObjectId, ref: "venueUser" },
-    content: String,
-    require: true,
+    content: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true }
 );
