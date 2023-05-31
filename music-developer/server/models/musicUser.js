@@ -21,36 +21,36 @@ const musicUserSchema = new Schema(
       minlength: 8,
     },
     location: {
-      type: string,
+      type: String,
       required: true,
     },
     genre: {
-      type: [string],
+      type: [String],
       required: true,
     },
     bandMembers: {
-      type: [string],
+      type: [String],
       required: true,
     },
     bio: {
-      type: string,
+      type: String,
     },
     bandName: {
-      type: string,
+      type: String,
       required: true,
     },
     website: {
-      type: string,
+      type: String,
     },
     socialLinks: {
-      type: [string],
+      type: [String],
     },
     posts: [{ type: Schema.Types.ObjectId, ref: "musicUserPosts" }],
     bandCoverPhoto: {
-      type: string,
+      type: String,
     },
     bandProfilePhoto: {
-      type: string,
+      type: String,
     },
   },
   {

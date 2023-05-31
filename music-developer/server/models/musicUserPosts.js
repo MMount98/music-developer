@@ -4,7 +4,7 @@ const musicUserPostsSchema = new Schema(
   {
     user: { type: Schema.Types.ObjectId, ref: "musicUser" },
     content: {
-      type: string,
+      type: String,
       require: true,
     },
   },
