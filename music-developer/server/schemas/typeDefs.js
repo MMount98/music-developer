@@ -1,7 +1,7 @@
 const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
-  type venueUser {
+  type VenueUser {
     _id: ID!
     username: String
     email: String
@@ -9,75 +9,76 @@ const typeDefs = gql`
     venueName: String
     capacity: Int
     location: String
-    availableDates: [Date]
+    availableDates: [String]
     website: String
     description: String
-    posts: [venueUserPosts]
+    posts: [VenueUserPosts]
     bandVenuePhoto: String
     createdAt: String
   }
 
-  type venueUserPosts {
+  type VenueUserPosts {
     _id: ID!
-    venue: [venueUser]
+    venue: VenueUser
     content: String
     createdAt: String
   }
 
-  type musicUser {
+  type MusicUser {
     _id: ID!
     username: String
     email: String
     password: String
     location: String
-    genre: String
+    genre: [String]
     bandMembers: [String]
     bio: String
     bandName: String
-    socialLinks: String
+    socialLinks: [String]
     description: String
-    posts: [musicUserPosts]
+    posts: [MusicUserPosts]
     bandCoverPhoto: String
     bandProfilePhoto: String
     createdAt: String
   }
 
-  type musicUserPosts {
+  type MusicUserPosts {
     _id: ID!
-    user: [musicUser]
+    user: MusicUser
     content: String
     createdAt: String
   }
 
-  type messages {
+  type Messages {
     _id: ID!
-    sender: [user]
-    receiver: [user]
+    senderMusicUser: MusicUser
+    senderVenueUser: VenueUser
+    receiverMusicUser: MusicUser
+    receiverVenueUser: VenueUser
     content: String
     createdAt: String
   }
 
-  type bookings {
+  type Bookings {
     _id: ID!
-    band: [musicUser]
-    venue: [venueUser]
-    date: [Date]
+    band: [MusicUser]
+    venue: [VenueUser]
+    date: String
     status: String
   }
 
   type Auth {
     token: ID!
-    user: User
-    entity: Entity
+    musicUser: MusicUser
+    venueUser: VenueUser
   }
 
   type Query {
-    musicUser: [musicUser]!
-    musicUser(musicUserId: ID!): musicUser
-    me: musicUser
-    venueUser: [venueUser]!
-    venueUser(venueUserId: ID!): venueUser
-    me: venueUser
+    musicUser: [MusicUser]!
+    musicUser(musicUserId: ID!): MusicUser
+    me: MusicUser
+    venueUser: [VenueUser]!
+    venueUser(VenueUserId: ID!): VenueUser
   }
 
   type Mutation {
@@ -90,7 +91,8 @@ const typeDefs = gql`
       location: String!
       website: String
       description: String
-    ): venueUser
+    ): VenueUser
+    removeVenueUser(id: ID!): Boolean
     createMusicUser(
       username: String!
       email: String!
@@ -104,11 +106,12 @@ const typeDefs = gql`
       bandCoverPhoto: String
       bandProfilePhoto: String
       createdAt: String
-    ): musicUser
+    ): MusicUser  // Corrected here
+    removeMusicUser(id: ID!): Boolean
     updateMusicUser(
+      id: ID!
       username: String
       email: String
-      password: String
       location: String
       genre: String
       bandMembers: [String]
@@ -116,27 +119,27 @@ const typeDefs = gql`
       bandName: String
       socialLinks: String
       description: String
-      posts: [musicUserPosts]
       bandCoverPhoto: String
       bandProfilePhoto: String
-    ): musicUser
+    ): Boolean
     updateVenueUser(
+      id: ID!
       username: String
       email: String
-      password: String
       venueName: String
       capacity: Int
       location: String
-      availableDates: [Date]
+      availableDates: [String]
       website: String
       description: String
-      posts: [venueUserPosts]
       bandVenuePhoto: String
-    ): venueUser
-    createMusicUserPost(content: String!): musicUserPosts
-    createvenueUserPosts(content: String!): venueUserPosts
-    removeMusicUser: musicUser
-    removeVenueUser: venueUser
+    ): Boolean
+    createMusicUserPost(content: String!): MusicUserPosts
+    createVenueUserPost(content: String!): VenueUserPosts
+    loginMusicUser(email: String!, password: String!): Auth
+    loginVenueUser(email: String!, password: String!): Auth
+    sendMessageFromMusicUser(receiverId: ID!, content: String!): Messages
+    sendMessageFromVenueUser(receiverId: ID!, content: String!): Messages
   }
 `;
 
