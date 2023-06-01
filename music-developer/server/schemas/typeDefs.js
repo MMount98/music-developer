@@ -13,7 +13,7 @@ const typeDefs = gql`
     website: String
     description: String
     posts: [VenueUserPosts]
-    bandVenuePhoto: String
+    venuePhoto: String
     createdAt: String
   }
 
@@ -76,7 +76,6 @@ const typeDefs = gql`
   type Query {
     musicUser: [MusicUser]!
     musicUser(musicUserId: ID!): MusicUser
-    me: MusicUser
     venueUser: [VenueUser]!
     venueUser(VenueUserId: ID!): VenueUser
   }
