@@ -74,12 +74,11 @@ const typeDefs = gql`
   }
 
   type Query {
-    musicUser: [MusicUser]!
+    musicUsers: [MusicUser]!
     musicUser(musicUserId: ID!): MusicUser
-    venueUser: [VenueUser]!
+    venueUsers: [VenueUser]!
     venueUser(VenueUserId: ID!): VenueUser
-  }
-
+}
   type Mutation {
     createVenueUser(
       username: String!
@@ -105,7 +104,7 @@ const typeDefs = gql`
       bandCoverPhoto: String
       bandProfilePhoto: String
       createdAt: String
-    ): MusicUser  // Corrected here
+    ): MusicUser  
     removeMusicUser(id: ID!): Boolean
     updateMusicUser(
       id: ID!

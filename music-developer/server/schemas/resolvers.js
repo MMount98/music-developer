@@ -9,7 +9,7 @@ const {
 } = require("../models/index");
 
 const { signToken } = require("../utils/auth");
-const { musicUser } = require("../models/musicUser");
+
 
 const resolvers = {
   Query: {
