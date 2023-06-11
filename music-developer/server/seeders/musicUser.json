@@ -1,0 +1,41 @@
+[
+    {
+        "username": "mmount98",
+        "email": "mount.photos@gmail.com",
+        "password": "password",
+        "location": "Denver",
+        "genre": ["Rock","Hard Rock", "Pop"],
+        "bandMembers": ["Jacob", "Maddie", "Jo"],
+        "bio": "Funcky grovvy band based out of denver looking dfor their big break",
+        "bandName": "McMike",
+        "website": "www.google.com",
+        "socialLinks": ["www.twitter.com", "www.instagram.com", "www.youtube.com", "www.spotify.com"],
+        "bandProfilePhoto": "https://images.unsplash.com/photo-1516057747705-0609711c1b31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
+},
+{
+    "username": "mellowpunk",
+    "email": "mellow@gmail.com",
+    "password": "password",
+    "location": "Denver",
+    "genre": ["Pop","Indie", "Synth"],
+    "bandMembers": ["Jacob", "Maddie", "Dev"],
+    "bio": "Funcky grovvy band based out of denver looking dfor their big break",
+    "bandName": "MellowPunk",
+    "website": "www.google.com",
+    "socialLinks": ["www.twitter.com", "www.instagram.com", "www.youtube.com", "www.spotify.com"],
+    "bandProfilePhoto": "https://images.unsplash.com/photo-1516057747705-0609711c1b31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
+},
+{
+    "username": "Blush",
+    "email": "blush@gmail.com",
+    "password": "password",
+    "location": "Denver",
+    "genre": ["Pop","Indie", "Electronica"],
+    "bandMembers": ["Jacob", "Caleb", "Dev"],
+    "bio": "Funcky grovvy band based out of denver looking dfor their big break",
+    "bandName": "Boys Don't Blush",
+    "website": "www.google.com",
+    "socialLinks": ["www.twitter.com", "www.instagram.com", "www.youtube.com", "www.spotify.com"],
+    "bandProfilePhoto": "https://images.unsplash.com/photo-1516057747705-0609711c1b31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
+}
+]
