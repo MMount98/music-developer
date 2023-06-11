@@ -1,0 +1,56 @@
+[
+  {
+    "username": "lostLake",
+    "email": "lostLake@gmail.com",
+    "password": "password",
+    "venueName": "Lost Lake",
+    "capacity": "500",
+    "location": "Denver",
+    "availableDates": ["05/02", "04/02", "06/09"],
+    "description": "Locally owned Bar/Venue in the heart of Denver",
+    "website": "www.google.com",
+    "socialLinks": [
+      "www.twitter.com",
+      "www.instagram.com",
+      "www.youtube.com",
+      "www.spotify.com"
+    ],
+    "venuePhoto": "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80"
+  },
+  {
+    "username": "ymh",
+    "email": "ymh@gmail.com",
+    "password": "password",
+    "venueName": "Your Mom's House",
+    "capacity": "450",
+    "location": "Denver",
+    "availableDates": ["05/06", "04/01", "06/03"],
+    "description": "Locally owned Bar/Venue in the heart of Denver",
+    "website": "www.google.com",
+    "socialLinks": [
+      "www.twitter.com",
+      "www.instagram.com",
+      "www.youtube.com",
+      "www.spotify.com"
+    ],
+    "venuePhoto": "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80"
+  },
+  {
+    "username": "foxTheatre",
+    "email": "foxT@gmail.com",
+    "password": "password",
+    "venueName": "Your Mom's House",
+    "capacity": "950",
+    "location": "Boulder",
+    "availableDates": ["05/02", "04/05", "06/01"],
+    "description": "Locally owned Bar/Venue in the heart of Boulder",
+    "website": "www.google.com",
+    "socialLinks": [
+      "www.twitter.com",
+      "www.instagram.com",
+      "www.youtube.com",
+      "www.spotify.com"
+    ],
+    "venuePhoto": "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80"
+  }
+]

@@ -42,8 +42,14 @@ const venueUserSchema = new Schema({
   bandCoverPhoto: {
     type: String,
   },
-  bandVenuePhoto: {
+  venuePhoto: {
     type: String,
+  },
+  website: {
+    type: String,
+  },
+  socialLinks: {
+    type: [String],
   },
 });
 
