@@ -72,4 +72,4 @@ venueUserSchema.methods.isCorrectPassword = async function (password) {
 
 const venueUser = model("venueUser", venueUserSchema);
 
-module.exports = { venueUser };
+module.exports = venueUser;

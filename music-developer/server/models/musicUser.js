@@ -75,6 +75,6 @@ musicUserSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-const musicUser = model("musicUser", musicUserSchema);
+const musicUser = model("MusicUser", musicUserSchema);
 
-module.exports = { musicUser };
+module.exports = musicUser;
