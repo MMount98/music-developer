@@ -1,15 +1,15 @@
-const musicUser = require("./musicUser");
+const MusicUser = require("./musicUser");
 const message = require("./messages");
 const bookings = require("./bookings");
 const musicUserPosts = require("./musicUserPosts");
-const venueUser = require("./venueUser");
+const VenueUser = require("./venueUser");
 const venueUserPosts = require("./musicUserPosts");
 
 module.exports = {
-  musicUser,
+  MusicUser,
   message,
   bookings,
   musicUserPosts,
-  venueUser,
+  VenueUser,
   venueUserPosts,
 };

@@ -1,8 +1,8 @@
 const { AuthenticationError } = require("apollo-server-express");
 const {
-  musicUser,
+  MusicUser,
   musicUserPosts,
-  venueUser,
+  VenueUser,
   venueUserPosts,
   message,
   bookings,
@@ -10,17 +10,21 @@ const {
 
 const { signToken } = require("../utils/auth");
 
-
 const resolvers = {
   Query: {
-    musicUser: async () => {
-      return await MusicUser.find();
+    musicUsers: async () => {
+      try {
+        const users = await MusicUser.find();
+        return users || [];
+      } catch (error) {
+        console.error("Error fetching musicUsers:", error);
+        return [];
+      }
     },
-    venueUser: async () => {
+    venueUsers: async () => {
       return await VenueUser.find();
     },
   },
-
   Mutation: {
     createVenueUser: async (parent, userInput) => {
       if (!userInput.venuePhoto) {
@@ -41,8 +45,10 @@ const resolvers = {
         userInput.bandProfilePhoto =
           "https://png.pngtree.com/png-vector/20190221/ourlarge/pngtree-female-user-vector-avatar-icon-png-image_691506.jpg";
       }
-      const newMusicUser = await musicUser.create(userInput);
+      const newMusicUser = await MusicUser.create(userInput);
       return newMusicUser;
     },
   },
 };
+
+module.exports = resolvers;
