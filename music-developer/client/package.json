@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^12.1.10",
     "daisyui": "^2.51.5",
     "formik": "^2.2.9",
+    "framer-motion": "^10.12.16",
     "graphql": "^15.4.0",
     "jwt-decode": "^3.1.2",
     "react": "^18.2.0",

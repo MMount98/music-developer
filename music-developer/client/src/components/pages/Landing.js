@@ -1,6 +1,12 @@
 import { TypeAnimation } from "react-type-animation";
+import { motion } from "framer-motion";
 
 export default function Landing() {
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 1 } },
+  };
+
   return (
     <>
       <div className="relative">
@@ -11,15 +17,21 @@ export default function Landing() {
         />
 
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center space-y-4">
-          <h1 className="text-5xl text-white m-5">Welcome To Band Brdige</h1>
-          <div>
+          <motion.h1
+            className="text-5xl text-white m-5"
+            variants={fadeIn}
+            initial="hidden"
+            animate="visible"
+          >
+            Welcome To Band Bridge
+          </motion.h1>
+          <motion.div variants={fadeIn} initial="hidden" animate="visible">
             <TypeAnimation
-            className="text-2xl text-white"
+              className="text-2xl text-white"
               preRenderFirstString={true}
               sequence={[
                 1500,
                 "Let Us Help you Find Your Next Show",
-
                 "Let Us Help you Find Your Next Opener",
                 1500,
                 "Let Us Help you Find Your Next Venue",
@@ -31,10 +43,16 @@ export default function Landing() {
               style={{ fontSize: "2em" }}
               repeat={Infinity}
             />
-          </div>
-        
-          <button className="btn btn-outline text-white">Find Local Bands</button>
-          <button className="btn btn-outline text-white">Find Local Concerts</button>
+          </motion.div>
+
+          <motion.div variants={fadeIn} initial="hidden" animate="visible">
+            <button className="btn btn-outline m-2 text-white">
+              Find Local Bands
+            </button>
+            <button className="btn btn-outline m-2 text-white">
+              Find Local Concerts
+            </button>
+          </motion.div>
         </div>
       </div>
     </>
