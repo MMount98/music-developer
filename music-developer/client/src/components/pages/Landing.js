@@ -30,8 +30,8 @@ export default function Landing() {
               className="text-2xl text-white"
               preRenderFirstString={true}
               sequence={[
-                1500,
                 "Let Us Help you Find Your Next Show",
+                1500,
                 "Let Us Help you Find Your Next Opener",
                 1500,
                 "Let Us Help you Find Your Next Venue",
