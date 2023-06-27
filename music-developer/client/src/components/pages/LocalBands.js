@@ -14,7 +14,7 @@ export default function BandsInStatePage()  {
       
       // Convert coordinates to state using Google's Geocoding API
       try {
-        const response = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${process.env.REACT_APP_GOOGLE_API}`);
+        const response = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${process.env.REACT_APP_GOOGLE_API }`);
         const addressComponents = response.data.results[0].address_components;
         const stateObj = addressComponents.find(component => component.types.includes('administrative_area_level_1'));
         const userState = stateObj.long_name;
