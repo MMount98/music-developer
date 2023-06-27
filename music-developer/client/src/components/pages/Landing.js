@@ -1,5 +1,6 @@
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function Landing() {
   const fadeIn = {
@@ -46,12 +47,12 @@ export default function Landing() {
           </motion.div>
 
           <motion.div variants={fadeIn} initial="hidden" animate="visible">
-            <button className="btn btn-outline m-2 text-white">
+            <Link to="/localBands" className="btn btn-outline m-2 text-white">
               Find Local Bands
-            </button>
-            <button className="btn btn-outline m-2 text-white">
+            </Link>
+            <Link className="btn btn-outline m-2 text-white">
               Find Local Concerts
-            </button>
+            </Link>
           </motion.div>
         </div>
       </div>
