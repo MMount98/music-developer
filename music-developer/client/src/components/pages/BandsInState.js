@@ -1,56 +1,24 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-
+import {useQuery} from "@apollo/client"
+import {QUERY_MUSICPROFILES} from "../../utils/queries"
 
 export default function BandsInStatePage() {
-  const [state, setState] = useState(null);
-  const [bands, setBands] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const {loading, data} = useQuery(QUERY_MUSICPROFILES);
+  const profiles = data?.profiles || []
 
-  useEffect(() => {
-    // Get user's location
-    navigator.geolocation.getCurrentPosition(async (position) => {
-      const { latitude, longitude } = position.coords;
-
-      // Convert coordinates to state using Google's Geocoding API
-      try {
-        const response = await axios.get(
-          `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${process.env.REACT_APP_GOOGLE_API}`
-        );
-        console.log(response.data);
-        const addressComponents = response.data.results[0].address_components;
-        const stateObj = addressComponents.find((component) =>
-          component.types.includes("administrative_area_level_1")
-        );
-        const userState = stateObj.long_name;
-
-        setState(userState);
-
-        // Query your database for bands in the state
-        const bandsResponse = await axios.get(`/api/bands?state=${userState}`);
-        setBands(bandsResponse.data);
-      } catch (error) {
-        console.error("Error getting state:", error);
-      } finally {
-        setLoading(false);
-      }
-    });
-  }, []);
+  if(!profiles.length) {
+    return <h3>No Bands have Signed up in your Area, Spread the word!</h3>
+  }
 
   return (
-    <div>
-      {loading ? (
-        <div>Loading...</div>
-      ) : (
-        <div>
-          <h1>Bands in {state}</h1>
-          <ul>
-            {bands.map((band) => (
-              <li key={band.id}>{band.name}</li>
-            ))}
-          </ul>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7">
+      {profiles.map((profile) =>(
+        <div key={profile._id} className="card card-side bg-base-200 shadow-xl m-3 flex flex-col justify-between border">
+          <h2>{profile.bandName}</h2>
+          <img src={profile.bandImage} alt={profile.bandName}/>
+          <p>{profile.bandBio}</p>
         </div>
-      )}
+      ))}
     </div>
   );
 }

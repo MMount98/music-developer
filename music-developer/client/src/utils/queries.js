@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 
-export const QUERY_PROFILES = gql`
+export const QUERY_MUSICPROFILES = gql`
   {
     musicUsers {
       _id
@@ -11,14 +11,6 @@ export const QUERY_PROFILES = gql`
       genre
       location
       socialLinks
-    }
-    venueUsers {
-      _id
-      description
-      location
-      venueName
-      venuePhoto
-      website
     }
   }
 `;
